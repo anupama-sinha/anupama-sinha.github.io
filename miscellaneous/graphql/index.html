@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>GraphQL vs Rest · Technical Interview Handbook</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Protocol Transition"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="GraphQL vs Rest · Technical Interview Handbook"/><meta property="og:type" content="website"/><meta property="og:url" content="https://anupama-sinha.github.io/"/><meta property="og:description" content="## Protocol Transition"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://anupama-sinha.github.io/img/img.jpeg"/><link rel="shortcut icon" href="/img/final.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/final.ico" alt="Technical Interview Handbook"/><h2 class="headerTitleWithLogo">Technical Interview Handbook</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/best_practices/spring_project" target="_self">Notes</a></li><li class="siteNavGroupActive"><a href="/about-me" target="_self">About Me</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Concepts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduction<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/welcome">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Best Practices<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/best_practices/spring_project">Spring Project</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Messaging<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Basics</h4><ul><li class="navListItem"><a class="navItem" href="/async_messaging/messaging">Messaging Guide</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Rabbit MQ</h4><ul><li class="navListItem"><a class="navItem" href="/async_messaging/messaging_using_rabbitmq">Rabbit MQ Guide</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Logging<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/logging/elk">ELK Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/miscellaneous/graphql">GraphQL vs Rest</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">ORM<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/orm/hibernate-mapping">Hibernate Mapping Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Database<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/database/nosql/mongodb">Mongo DB Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Enterprise Search<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/enterprise_search/apache_solr">Apache Solr Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">UI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/front_end/react-js">ReactJS Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Build Tool<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/build_tool/maven">Maven Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Testing<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/testing/junit5-mockito">Junit5 &amp; Mockito Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CI/CD<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/ci_cd/docker-desktop">Docker Desktop Installation</a></li><li class="navListItem"><a class="navItem" href="/ci_cd/docker">Docker Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">About Me<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/about-me">About Me</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">GraphQL vs Rest</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="protocol-transition"></a><a href="#protocol-transition" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Protocol Transition</h2>
+<table>
+<thead>
+<tr><th>Year</th><th>Protocol</th></tr>
+</thead>
+<tbody>
+<tr><td>1981</td><td>RPC(Remote Procedure Call)</td></tr>
+<tr><td>1991</td><td>CORBA(Common Object Request Broker Architecture)</td></tr>
+<tr><td>1998</td><td>SOAP(Simple Object Access Protocol</td></tr>
+<tr><td>2000</td><td>REST(REpresentation State Transfer)</td></tr>
+<tr><td>2012</td><td>GraphQL(Graph Query Language)</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="graphql"></a><a href="#graphql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GraphQl</h2>
+<ul>
+<li>Query language for APIs</li>
+<li>Dynamic fulfilling of queries with existing data</li>
+<li>Single endpoint of POST with query</li>
+<li>Customized data fetching : Reducing the need for unrelevant data as opposed to REST static endpoints sending huge response</li>
+<li>Easier to evolve over time with developer tools</li>
+<li>Any UI Change is faster addressed to with GraphQL approach</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="history"></a><a href="#history" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>History</h2>
+<ul>
+<li>Developed since 2012 by Lee Brown(Facebook) due to data-fetching needs</li>
+<li>Published(Open sourced) in 2015</li>
+<li>Currently under Linux Foundation umbrella</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="rest-vs-graphql-approaches"></a><a href="#rest-vs-graphql-approaches" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>REST vs GraphQL Approaches</h2>
+<table>
+<thead>
+<tr><th>REST</th><th>GraphQL</th></tr>
+</thead>
+<tbody>
+<tr><td>Considers everything as resources and fetches them</td><td>Considers everything as connected graph</td></tr>
+<tr><td>Requires multiple round trips if data to be fetched from different endpoints</td><td>A single POST API call with differnt queries solves the problem</td></tr>
+<tr><td>Over and under fetching of data</td><td>Customized data fetching</td></tr>
+<tr><td>New endpoint needed for different resource with custom data</td><td>No new endpoint needed. Only server needs to handle such requests</td></tr>
+<tr><td>Good with simple applications</td><td>Not good with simple applications as types,queries &amp; resolvers need to be defined</td></tr>
+<tr><td>Simple error handling</td><td>Complex error handling</td></tr>
+<tr><td>Entry point into data is multiple endpoints</td><td>List of fields &amp; Mutation types is the entry point</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="query-example"></a><a href="#query-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query Example</h2>
+<ul>
+<li>HTTP GET : <a href="http://myapi/graphql?query={me{name}}">http://myapi/graphql?query={me{name}}</a></li>
+</ul>
+<pre><code class="hljs">{
+  <span class="hljs-keyword">me</span> {
+    <span class="hljs-built_in">name</span>
+  }
+}
+</code></pre>
+<ul>
+<li>HTTP POST</li>
+</ul>
+<pre><code class="hljs">{
+  <span class="hljs-string">"query"</span>: <span class="hljs-string">"..."</span>,
+  <span class="hljs-string">"operationName"</span>: <span class="hljs-string">"..."</span>,
+  <span class="hljs-string">"variables"</span>: { <span class="hljs-string">"myVariable"</span>: <span class="hljs-string">"someValue"</span>, ... }
+}
+</code></pre>
+<ul>
+<li>Response</li>
+</ul>
+<pre><code class="hljs">{
+  <span class="hljs-string">"data"</span>: { ... },
+  <span class="hljs-string">"errors"</span>: [ ... ]
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="expectations-with-graphql"></a><a href="#expectations-with-graphql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Expectations with GraphQL</h2>
+<ul>
+<li>Both frontend and backend needs to know data structure. But only backend will work with database</li>
+<li>HTTP Specification for Caching at network layer not followed as in REST. So, needs Caching of data. Caching enables offline data loading</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="common-use-cases-for-graphql"></a><a href="#common-use-cases-for-graphql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Common Use Cases for GraphQL</h2>
+<ul>
+<li>Different I/Os(Mobile, Website, Echo, Tab, etc.) needing different set of attributes</li>
+<li>GraphQl Client invoking API Gateway. While API Gateway invoking REST Applications</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="best-practices-to-follow-with-graphql-client"></a><a href="#best-practices-to-follow-with-graphql-client" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Best Practices to follow with GraphQL Client</h2>
+<ul>
+<li>Loading current usable component before the other components which would be needed later for rendering, thereby reducing load time</li>
+<li>Data attribute nomenclature must be unique. No two table columns must have same names to remove amiguity</li>
+<li>Persisted ID &amp; variable caching so as to enable offine loading</li>
+<li>Storing common data in global store(Eg With Redux Global Store with React.js)</li>
+<li><a href="https://graphql.org/learn/authorization/">Authorizing users</a> to access specific data based on user_type in API must be properly defined using access control with GraphQL</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="limitations-of-graphql"></a><a href="#limitations-of-graphql" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Limitations of GraphQL</h2>
+<ul>
+<li>Limited tools eg. API Analytics</li>
+<li>REST endpoint dominates in 3rd party tools which would be needed for project building</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="apollo-platformhttpswwwapollographqlcomdocstutorialintroduction"></a><a href="#apollo-platformhttpswwwapollographqlcomdocstutorialintroduction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.apollographql.com/docs/tutorial/introduction/">Apollo Platform</a></h2>
+<ul>
+<li>Implementation of GraphQl  which transfers data between cloud(Server) to frontend app(Client)</li>
+<li>Popular choice of using GraphQL in Javascript based apps</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="in-memory-data-caching"></a><a href="#in-memory-data-caching" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>In memory Data Caching</h2>
+<ul>
+<li>Multiple data fetch for the same request can be effectively solved by use of <a href="https://www.graphql-tools.com/docs/connectors/">Facebook's DataLoader Library</a></li>
+<li><a href="https://youtu.be/2cSVIWDUSn4">Implementation Steps</a></li>
+<li><a href="https://stackoverflow.com/questions/60326089/is-graphql-suitable-for-retrieving-multi-level-facet-data-from-a-back-end-withou">Migration from Solr to GraphQL</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="conclusion"></a><a href="#conclusion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusion</h2>
+<ul>
+<li>Meticulous analysis of application needs to be done to decide which one to go ahead with REST or GraphQL</li>
+<li>Play around the GraphQL playgrounds available online and finalize which one to proceed with</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="references"></a><a href="#references" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>References</h2>
+<ul>
+<li><a href="https://graphql.org/code/">https://graphql.org/code/</a></li>
+<li><a href="https://medium.com/@back4apps/graphql-vs-rest-62a3d6c2021d#:~:text=With%20REST%2C%20the%20server%20determines,has%20no%20automatic%20caching%20system.">Differences between both</a></li>
+<li><a href="https://youtu.be/1Fg_QtzI7SU">Best Practices for GraphQL</a></li>
+<li><a href="https://www.apollographql.com/blog/authorization-in-graphql-452b1c402a9/">Access Control with GraphQL</a></li>
+<li><a href="https://www.pingidentity.com/en/company/blog/posts/2020/graphql-access-control-part-1.html">Access Control Implementation Example</a></li>
+<li><a href="https://jkettmann.com/3-ways-for-authorization-with-graphql-and-apollo/">Authorization ways with Apollo</a></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/logging/elk"><span class="arrow-prev">← </span><span>ELK Guide</span></a><a class="docs-next button" href="/orm/hibernate-mapping"><span>Hibernate Mapping Guide</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#protocol-transition">Protocol Transition</a></li><li><a href="#graphql">GraphQl</a></li><li><a href="#history">History</a></li><li><a href="#rest-vs-graphql-approaches">REST vs GraphQL Approaches</a></li><li><a href="#query-example">Query Example</a></li><li><a href="#expectations-with-graphql">Expectations with GraphQL</a></li><li><a href="#common-use-cases-for-graphql">Common Use Cases for GraphQL</a></li><li><a href="#best-practices-to-follow-with-graphql-client">Best Practices to follow with GraphQL Client</a></li><li><a href="#limitations-of-graphql">Limitations of GraphQL</a></li><li><a href="#apollo-platformhttpswwwapollographqlcomdocstutorialintroduction"><a href="https://www.apollographql.com/docs/tutorial/introduction/">Apollo Platform</a></a></li><li><a href="#in-memory-data-caching">In memory Data Caching</a></li><li><a href="#conclusion">Conclusion</a></li><li><a href="#references">References</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/final.ico" alt="Technical Interview Handbook" width="66" height="58"/></a><div><h5>Docs</h5><a href="/doc1.html">Getting Started (or other categories)</a><a href="/doc2.html">Guides (or other categories)</a><a href="/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/users">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 anupama-sinha</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

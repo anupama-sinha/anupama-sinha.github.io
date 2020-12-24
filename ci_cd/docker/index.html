@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Docker Guide · Technical Interview Handbook</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Docker"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Docker Guide · Technical Interview Handbook"/><meta property="og:type" content="website"/><meta property="og:url" content="https://anupama-sinha.github.io/"/><meta property="og:description" content="## Docker"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://anupama-sinha.github.io/img/img.jpeg"/><link rel="shortcut icon" href="/img/final.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/final.ico" alt="Technical Interview Handbook"/><h2 class="headerTitleWithLogo">Technical Interview Handbook</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/best_practices/spring_project" target="_self">Notes</a></li><li class="siteNavGroupActive"><a href="/about-me" target="_self">About Me</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>CI/CD</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduction<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/welcome">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Best Practices<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/best_practices/spring_project">Spring Project</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Messaging<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Basics</h4><ul><li class="navListItem"><a class="navItem" href="/async_messaging/messaging">Messaging Guide</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Rabbit MQ</h4><ul><li class="navListItem"><a class="navItem" href="/async_messaging/messaging_using_rabbitmq">Rabbit MQ Guide</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Logging<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/logging/elk">ELK Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/miscellaneous/graphql">GraphQL vs Rest</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">ORM<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/orm/hibernate-mapping">Hibernate Mapping Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Database<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/database/nosql/mongodb">Mongo DB Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Enterprise Search<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/enterprise_search/apache_solr">Apache Solr Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">UI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/front_end/react-js">ReactJS Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Build Tool<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/build_tool/maven">Maven Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Testing<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/testing/junit5-mockito">Junit5 &amp; Mockito Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CI/CD<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/ci_cd/docker-desktop">Docker Desktop Installation</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/ci_cd/docker">Docker Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">About Me<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/about-me">About Me</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Docker Guide</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="docker"></a><a href="#docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker</h2>
+<ul>
+<li>Application: Artifact(JAR+WAR) + Environemnt</li>
+<li>Docker App -&gt; JVM -&gt; OS</li>
+<li>Docker CLI(Commands) -&gt; Docker Daemon -&gt; OS</li>
+<li>Create Image -&gt; Docker Image -&gt; OS(Own)</li>
+</ul>
+<blockquote>
+<p>java -jar spring-rest-application.jar -&gt; Makes it run in JVM</p>
+</blockquote>
+<ul>
+<li>[OS + Install Java]  + JAR file  -&gt; Run JAR file
+Support Team          Dev Team</li>
+<li>Containers : Images which are running</li>
+<li>Containerzation is better than virtualization</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="docker-engine"></a><a href="#docker-engine" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker Engine</h2>
+<ul>
+<li>Helps in creating executable images</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="docker-client"></a><a href="#docker-client" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker Client</h2>
+<ul>
+<li>CLI to build, publish, pull, run images</li>
+<li>Invokes Docker Daemon REST API endpoint for doing the work</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="docker-deamon"></a><a href="#docker-deamon" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker Deamon</h2>
+<ul>
+<li>Contains images &amp; containers</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="docker-objects"></a><a href="#docker-objects" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker Objects</h2>
+<ul>
+<li>Images, Containers/Services, Network, Volume</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="docker-registry"></a><a href="#docker-registry" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker Registry</h2>
+<ul>
+<li>Stores images(Eg. Docker hub, AWS container registry, google container registry etc.)</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="dockerfile"></a><a href="#dockerfile" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dockerfile</h2>
+<ul>
+<li>Commands to build image</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="docker-storage"></a><a href="#docker-storage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker Storage</h2>
+<ul>
+<li>Maintains single copy of shared data</li>
+<li>Volume(Dir mounted) : Common across container to use the shared data</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="docker-compose"></a><a href="#docker-compose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker Compose</h2>
+<ul>
+<li>Multiple containers/services running together</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="legacy-way-to-run-an-application-in-os"></a><a href="#legacy-way-to-run-an-application-in-os" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Legacy Way to run an application in OS</h2>
+<ol>
+<li>Install Windows 10/Centos(Centos OS Size- Virtual OS- LINUX variant of Java)</li>
+<li>Install Java 1.8</li>
+</ol>
+<blockquote>
+<p>yum install java(No installer in Linux, so run yum command)</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>brew install java(In Mac)</p>
+</blockquote>
+<ol start="3">
+<li>Copy JAR file to root path or any specific path</li>
+<li>Run JAR(Write in quotes)
+java -jar spring-rest-application.jar</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="docker-way-to-run-the-application"></a><a href="#docker-way-to-run-the-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker way to run the application</h2>
+<ol>
+<li>Create Docker file</li>
+</ol>
+<ul>
+<li>Example 1 : Centos OS</li>
+</ul>
+<pre><code class="hljs css language-yaml">FROM centos <span class="token punctuation">[</span>Centos empty OS<span class="token punctuation">]</span>
+RUN yum install <span class="token punctuation">-</span>y java
+VOLUME /tmp <span class="token punctuation">[</span>Containers are stateless and data selected each time. So can use the dir specified in volume across containers and when started again or newly<span class="token punctuation">]</span>
+COPY target/abc.jar abc.jar
+ENTRYPOINT<span class="token punctuation">[</span><span class="token string">"java"</span><span class="token punctuation">,</span><span class="token string">"-jar"</span><span class="token punctuation">,</span><span class="token string">"/spring-rest-application.jar"</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>Example 2 : Alpine OS</li>
+</ul>
+<pre><code class="hljs css language-yaml">FROM alpine<span class="token punctuation">:</span><span class="token number">3.2</span> 
+RUN apk <span class="token punctuation">-</span><span class="token punctuation">-</span>update add openjdk8<span class="token punctuation">-</span>jre   <span class="token punctuation">[</span>apk command instead of yum<span class="token punctuation">]</span>
+COPY target/abc.jar abc.jar
+ENTRYPOINT<span class="token punctuation">[</span><span class="token string">"java"</span><span class="token punctuation">,</span><span class="token string">"-jar"</span><span class="token punctuation">,</span><span class="token string">"/spring-rest-application.jar"</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>Example 3 : Install Java with Installed OS</li>
+</ul>
+<pre><code class="hljs css language-yaml">FROM openjdk8<span class="token punctuation">-</span>jre<span class="token punctuation">-</span>slim
+WORKDIR /home <span class="token punctuation">[</span>Default target path for all throughput. Prefixed in each path<span class="token punctuation">]</span>
+COPY target/abc.jar abc.jar
+EXPOSE 8080
+ENTRYPOINT<span class="token punctuation">[</span><span class="token string">"java"</span><span class="token punctuation">,</span><span class="token string">"-jar"</span><span class="token punctuation">,</span><span class="token string">"/spring-rest-application.jar"</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>Example 4 : catalina base installs tomcat in /usr/local/tomcat</li>
+</ul>
+<pre><code class="hljs css language-yaml">FROM tomcat<span class="token punctuation">:</span>latest
+add target/sample.war /usr/local/tomcat/webapps/
+EXPOSE 8080
+cmd<span class="token punctuation">[</span><span class="token string">"catalina.sh"</span><span class="token punctuation">,</span><span class="token string">"run"</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>Create image(-t : Specifies name, . : dockerfile path in current directory, If name not mentioned, then alphanumeric)</li>
+</ul>
+<blockquote>
+<p>docker build -t anu-application:1.0.</p>
+</blockquote>
+<ul>
+<li>Check images</li>
+</ul>
+<blockquote>
+<p>docker images</p>
+</blockquote>
+<ul>
+<li>Check containers</li>
+</ul>
+<blockquote>
+<p>docker ps</p>
+</blockquote>
+<ul>
+<li>Stop containers(Returns container id if stopped successfully)</li>
+</ul>
+<blockquote>
+<p>docker stop container-id</p>
+</blockquote>
+<ul>
+<li>Start container</li>
+</ul>
+<blockquote>
+<p>docker start container-id</p>
+</blockquote>
+<ul>
+<li>Stop all containers running</li>
+</ul>
+<blockquote>
+<p>docker ps -a</p>
+</blockquote>
+<ul>
+<li>Remove all stopped containers</li>
+</ul>
+<blockquote>
+<p>docker container prune</p>
+</blockquote>
+<ul>
+<li>Run the images. This runs in centos OS. So, cant be accessed from our OS</li>
+</ul>
+<blockquote>
+<p>docker run anu-application</p>
+</blockquote>
+<ul>
+<li>Accessing in localhost[5000 is outside port accessible from localhost]</li>
+</ul>
+<blockquote>
+<p>docker run -p 5000:8080 anu-application</p>
+</blockquote>
+<ul>
+<li>Force delete image</li>
+</ul>
+<blockquote>
+<p>docker image rm -f anu-application</p>
+</blockquote>
+<ul>
+<li>Debug Container(-it: internative, else detached, exec: run inside docker container, bash: cmd prompt, sh: cmd prompt, ctrl+d: come out of container)</li>
+</ul>
+<blockquote>
+<p>docker exec -it container-name bash</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="docker-commands"></a><a href="#docker-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker Commands</h2>
+<ul>
+<li>Check version
+docker -v</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/ci_cd/docker-desktop"><span class="arrow-prev">← </span><span>Docker Desktop Installation</span></a><a class="docs-next button" href="/about-me"><span>About Me</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#docker">Docker</a></li><li><a href="#docker-engine">Docker Engine</a></li><li><a href="#docker-client">Docker Client</a></li><li><a href="#docker-deamon">Docker Deamon</a></li><li><a href="#docker-objects">Docker Objects</a></li><li><a href="#docker-registry">Docker Registry</a></li><li><a href="#dockerfile">Dockerfile</a></li><li><a href="#docker-storage">Docker Storage</a></li><li><a href="#docker-compose">Docker Compose</a></li><li><a href="#legacy-way-to-run-an-application-in-os">Legacy Way to run an application in OS</a></li><li><a href="#docker-way-to-run-the-application">Docker way to run the application</a></li><li><a href="#docker-commands">Docker Commands</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/final.ico" alt="Technical Interview Handbook" width="66" height="58"/></a><div><h5>Docs</h5><a href="/doc1.html">Getting Started (or other categories)</a><a href="/doc2.html">Guides (or other categories)</a><a href="/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/users">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 anupama-sinha</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

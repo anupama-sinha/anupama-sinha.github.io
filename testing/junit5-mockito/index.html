@@ -1,0 +1,372 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Junit5 &amp; Mockito Guide · Technical Interview Handbook</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# Junit 5 &amp; Mockito Learnings"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Junit5 &amp; Mockito Guide · Technical Interview Handbook"/><meta property="og:type" content="website"/><meta property="og:url" content="https://anupama-sinha.github.io/"/><meta property="og:description" content="# Junit 5 &amp; Mockito Learnings"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://anupama-sinha.github.io/img/img.jpeg"/><link rel="shortcut icon" href="/img/final.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/final.ico" alt="Technical Interview Handbook"/><h2 class="headerTitleWithLogo">Technical Interview Handbook</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/best_practices/spring_project" target="_self">Notes</a></li><li class="siteNavGroupActive"><a href="/about-me" target="_self">About Me</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Testing</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduction<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/welcome">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Best Practices<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/best_practices/spring_project">Spring Project</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Messaging<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Basics</h4><ul><li class="navListItem"><a class="navItem" href="/async_messaging/messaging">Messaging Guide</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Rabbit MQ</h4><ul><li class="navListItem"><a class="navItem" href="/async_messaging/messaging_using_rabbitmq">Rabbit MQ Guide</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Logging<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/logging/elk">ELK Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/miscellaneous/graphql">GraphQL vs Rest</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">ORM<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/orm/hibernate-mapping">Hibernate Mapping Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Database<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/database/nosql/mongodb">Mongo DB Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Enterprise Search<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/enterprise_search/apache_solr">Apache Solr Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">UI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/front_end/react-js">ReactJS Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Build Tool<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/build_tool/maven">Maven Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Testing<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/testing/junit5-mockito">Junit5 &amp; Mockito Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CI/CD<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/ci_cd/docker-desktop">Docker Desktop Installation</a></li><li class="navListItem"><a class="navItem" href="/ci_cd/docker">Docker Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">About Me<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/about-me">About Me</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Junit5 &amp; Mockito Guide</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="junit-5--mockito-learnings"></a><a href="#junit-5--mockito-learnings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Junit 5 &amp; Mockito Learnings</h1>
+<blockquote>
+<p>It’s only human to make mistakes</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="why-unit-testing"></a><a href="#why-unit-testing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Why Unit Testing?</h2>
+<ul>
+<li>Compile time errors handled by Compiler</li>
+<li>Maximum exceptions handled by Coder.</li>
+<li>But there can still be various scopes of logical errors and   missing out on handling exceptions and n-number of reasons always.</li>
+<li>Application might run in production but might not pass business logic of Unit Testing written earlier</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="history"></a><a href="#history" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>History</h2>
+<table>
+<thead>
+<tr><th>Year</th><th>Version</th></tr>
+</thead>
+<tbody>
+<tr><td>2002</td><td>JUnit</td></tr>
+<tr><td>2006</td><td>JUnit4</td></tr>
+<tr><td>2017</td><td>JUnit5</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="why-junit5"></a><a href="#why-junit5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Why JUnit5?</h2>
+<ol>
+<li>More than 10 years old</li>
+<li>Latest features(Functional Programming-Lambda,etc) not supported</li>
+<li>Bugs &amp; features got pilled up</li>
+<li>Older versions supported monolithic architecture</li>
+<li>Various new Test Design Patterns commonly used nowadays were not supported</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="junit5-architecture"></a><a href="#junit5-architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JUnit5 Architecture</h2>
+<ol>
+<li><strong>Helps in Running JUnit</strong></li>
+</ol>
+<pre><code class="hljs"><span class="hljs-keyword">Test </span>Engine/Platform/Runner/Core : junit-jupiter-engine
+</code></pre>
+<ol start="2">
+<li><strong>APIs for writing Unit Tests</strong></li>
+</ol>
+<pre><code class="hljs"><span class="hljs-keyword">JUnit </span>API : <span class="hljs-keyword">junit-jupiter-api
+</span>Vintage API(<span class="hljs-keyword">Junit4 </span>API &amp; older ones supported) : <span class="hljs-keyword">junit-vintage-engine
+</span><span class="hljs-number">3</span>rd Party API : Support for <span class="hljs-number">3</span>rd Party APIs(Needs to implement interfaces of <span class="hljs-keyword">junit-jupiter-api
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="annotations-for-test-lifecycle-hooks"></a><a href="#annotations-for-test-lifecycle-hooks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Annotations for Test Lifecycle Hooks</h2>
+<ul>
+<li>@BeforeAll— Before beginning of class</li>
+<li>@BeforeEach— Before each Test cases</li>
+<li>@Test — Test Instance(Lifecycle:PER_METHOD is default. Class instance created each time for Test)</li>
+<li>@AfterEach— After each Test</li>
+<li>@AfterAll — After everything in Class runs</li>
+</ul>
+<p>Dependency across Tests isn’t a good practice. But if required then Order annotation can be used</p>
+<h2><a class="anchor" aria-hidden="true" id="best-practices-for-unit-testing"></a><a href="#best-practices-for-unit-testing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Best Practices for Unit Testing</h2>
+<ol>
+<li>Maintain Code Readability</li>
+<li>Follow Assert Convention(expected, actual)</li>
+<li>Ensure 100% code coverage as far as possible(Eg.Tools-EclEmma in IDE &amp; Generate Jacoco reports)</li>
+<li>Give Proper Name of methods or use Display Annotation</li>
+<li>Mock single class</li>
+<li>Use Assert &amp; Verify for all Tests. Check for Exceptions wherever applicable.</li>
+<li>Follow Test Driven Development(TDD)</li>
+<li>Have sections for Given, When &amp; Then</li>
+<li>Use FIRST Principle(Fast, Independent, Repeatable, Self Validating, Timely)</li>
+<li>Follow Test Design Patterns</li>
+<li>Always test arguments for Null, Empty String, Special Character, As per expectaton and exceptions</li>
+<li>Always check IDs for Null, Duplicate &amp; Valid</li>
+<li>Best practise for Unit Testing is to use @Mock. And for Integration testing, @MockBean is used which integrated in Spring Application Context</li>
+<li>@MockBean is used when we loaded Beans in Spring IOC Container for one class. But need bean of another layer not loaded. Then of Spring Test, we can use @MockBean to load the same</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="types-of-mocking-framework"></a><a href="#types-of-mocking-framework" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types of Mocking Framework</h2>
+<ol>
+<li>Proxy based
+Eg - EasyMock, JMock, Mockito)</li>
+<li>Byte code Manipulation/Classloader remapping
+Eg : jMockit, PowerMock)</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="mockito-framework-annotations"></a><a href="#mockito-framework-annotations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mockito Framework Annotations</h2>
+<ul>
+<li>@Mock : Mocks the dependency classes</li>
+<li>@InjectMocks : Mocks the Class Under Test(CUT)/System Under Test(SUT)</li>
+<li>@Captor : Allows to capture argument passed to methods for inspection</li>
+<li>@RunWith : Multiple Runners not allowed. So, Rules annotation can be used instead to include multiple runners.</li>
+<li>@Spy : Creates spies on real objects and helps in overriding too</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="junit-evolution-over-the-years-in-depth"></a><a href="#junit-evolution-over-the-years-in-depth" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JUnit Evolution over the Years in Depth</h2>
+<h2><a class="anchor" aria-hidden="true" id="1-stubbing-classes"></a><a href="#1-stubbing-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Stubbing Classes</h2>
+<ul>
+<li>Create Class Instance(Object)</li>
+<li>Requires change each time, class is changed. Not a good practice.</li>
+</ul>
+<pre><code class="hljs css language-java"><span class="token keyword">class</span> <span class="token class-name">SubtractOperationTest</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token annotation punctuation">@Display</span><span class="token punctuation">(</span><span class="token string">"TestSubtractOperation"</span><span class="token punctuation">)</span>
+    <span class="token keyword">void</span> <span class="token function">testSubtractOperation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token class-name">SubtractOperation</span> testClass <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubtractOperation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+      <span class="token comment">//given</span>
+      <span class="token keyword">int</span> expected <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
+      <span class="token comment">//when</span>
+      <span class="token keyword">int</span> actual <span class="token operator">=</span> testClass<span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//then</span>
+      <span class="token function">assertEquals</span><span class="token punctuation">(</span>expected<span class="token punctuation">,</span>actual<span class="token punctuation">,</span><span class="token string">"Subtract Operation Testing"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="2-mocking-classes"></a><a href="#2-mocking-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Mocking Classes</h2>
+<ul>
+<li>Dependency : mockito-junit-jupiter</li>
+<li>MockitoExtension replaces ancient MockitoAnnotation.init()</li>
+<li>SpringExtension loads the entire Spring Context</li>
+</ul>
+<pre><code class="hljs css language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.mockito<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mockito-junit-jupiter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+</code></pre>
+<pre><code class="hljs css language-java"><span class="token annotation punctuation">@ExtendWith</span><span class="token punctuation">(</span><span class="token class-name">MockitoExtension</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">SubtractOperationMockTest</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@InjectMocks</span>
+    <span class="token class-name">SubtractOperation</span> testClass
+    
+    <span class="token annotation punctuation">@Mock</span>
+    <span class="token class-name">CheckNumber</span> mockCheckNumber<span class="token punctuation">;</span>
+    
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token annotation punctuation">@Display</span><span class="token punctuation">(</span><span class="token string">"TestSubtractOperation"</span><span class="token punctuation">)</span>
+    <span class="token keyword">void</span> <span class="token function">testSubtractOperation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">//given</span>
+      <span class="token keyword">int</span> expected <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
+      <span class="token comment">//when</span>
+      <span class="token function">when</span><span class="token punctuation">(</span>mockCheckNumber<span class="token punctuation">.</span><span class="token function">checkValidity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">andReturn</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> actual <span class="token operator">=</span> testClass<span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//then</span>
+      <span class="token function">assertEquals</span><span class="token punctuation">(</span>expected<span class="token punctuation">,</span>actual<span class="token punctuation">,</span><span class="token string">"Subtract Operation Testing"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="3-controller-testing-with-webmvctest-annotation"></a><a href="#3-controller-testing-with-webmvctest-annotation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Controller Testing with WebMvcTest annotation</h2>
+<ul>
+<li>Loads only controller components of application(Controller,RestController,JsonComponent)</li>
+<li>Auto-configure Spring MVC, Jackson, Gson, Message converters, etc.</li>
+<li>Configures MockMVC — Doesn’t need to start the application completely as in Integration Testing</li>
+<li>Used with MockBean for adding mocks for dependencies in Spring Application Context</li>
+<li>Use MockMvc to mock different Request Mappings.</li>
+</ul>
+<pre><code class="hljs css language-java"><span class="token annotation punctuation">@WebMvcTest</span><span class="token punctuation">(</span><span class="token class-name">ProductController</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@TestInstance</span><span class="token punctuation">(</span><span class="token class-name">TestInstance</span><span class="token punctuation">.</span><span class="token class-name">Lifecycle</span><span class="token punctuation">.</span>PER_METHOD<span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">ProductControllerTest</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">MockMvc</span> mockMvc<span class="token punctuation">;</span>
+    
+    <span class="token annotation punctuation">@MockBean</span>
+    <span class="token keyword">private</span> <span class="token class-name">ProductService</span> mockProductService<span class="token punctuation">;</span>
+    
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token annotation punctuation">@Display</span><span class="token punctuation">(</span><span class="token string">"TestGetProduct"</span><span class="token punctuation">)</span>
+    <span class="token keyword">void</span> <span class="token function">testGetProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">//given</span>
+      <span class="token class-name">RequestBuilder</span> request <span class="token operator">=</span> <span class="token class-name">MockMvcRequestBuilders</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/products"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//when</span>
+      <span class="token class-name">MvcResult</span> result <span class="token operator">=</span> mockMvc<span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">andExpect</span><span class="token punctuation">(</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">isOk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">andReturn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//then</span>
+      <span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span>result<span class="token punctuation">.</span><span class="token function">getResponse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getContentAsString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"Check Get Product"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="4-service-layer-testing"></a><a href="#4-service-layer-testing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. Service Layer Testing</h2>
+<ul>
+<li>@InjectMocks : Creates objects and inject mocked dependencies. But tests actual object method.</li>
+<li>@Mock : Creates mock objects for the Autowired dependencies</li>
+<li>@MockitoJUnitRunner : In  JUnit4, MockitoAnnotations.initMocks(this) is called to initialize mock and inject in Test. So called before Test.</li>
+<li>@MockitoExtension : Initializes mocking in only specific test. JUnit Jupiter equivalent of JUnit4 MockitoJUnitRunner. Here MockBean doesn’t work</li>
+<li>@SpringExtension — Implements a lot more extensions than MockitoExtensions. Integrates the Spring TestContext Framework into JUnit 5’s Jupiter programming model. Hence, MockBean works with this.</li>
+</ul>
+<pre><code class="hljs css language-java"><span class="token annotation punctuation">@ExtendWith</span><span class="token punctuation">(</span><span class="token class-name">MockitoExtension</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@TestInstance</span><span class="token punctuation">(</span><span class="token class-name">TestInstance</span><span class="token punctuation">.</span><span class="token class-name">Lifecycle</span><span class="token punctuation">.</span>PER_METHOD<span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">ProductServiceTest</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@InjectMocks</span>
+    <span class="token keyword">private</span> <span class="token class-name">ProductService</span> mockProductService<span class="token punctuation">;</span>
+    
+    <span class="token annotation punctuation">@Mock</span>
+    <span class="token keyword">private</span> <span class="token class-name">ProductRepository</span> mockProductRepository<span class="token punctuation">;</span>
+    
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token annotation punctuation">@Display</span><span class="token punctuation">(</span><span class="token string">"TestGetProduct"</span><span class="token punctuation">)</span>
+    <span class="token keyword">void</span> <span class="token function">testGetProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">//given</span>
+      <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Product</span><span class="token punctuation">></span></span> products <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Products</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">new</span> <span class="token class-name">Product</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"Fruits"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Product</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"Vegetables"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token comment">//when</span>
+      <span class="token function">when</span><span class="token punctuation">(</span>mockProductRepository<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">thenReturn</span><span class="token punctuation">(</span>products<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Product</span><span class="token punctuation">></span></span> resultProducts <span class="token operator">=</span> mockProductService<span class="token punctuation">.</span><span class="token function">getAllProducts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//then</span>
+      <span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>resultProducts<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"Check Count of Products"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">verify</span><span class="token punctuation">(</span>mockProductRepository<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="5-respository-layer-testing-with-datajpatest-annotation"></a><a href="#5-respository-layer-testing-with-datajpatest-annotation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. Respository Layer Testing with DataJpaTest Annotation</h2>
+<ul>
+<li>Configures in-memory embedded database</li>
+<li>Transactional &amp; rolls back at end of @Test</li>
+<li>Scans @Entity classes &amp; configures Spring Data JPA Repository annotated with @Repository</li>
+</ul>
+<pre><code class="hljs css language-java"><span class="token annotation punctuation">@DataJpaTest</span>
+<span class="token keyword">class</span> <span class="token class-name">ProductRepositoryTest</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@MockBean</span>
+    <span class="token keyword">private</span> <span class="token class-name">ProductRepository</span> mockProductRepository<span class="token punctuation">;</span>
+    
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token annotation punctuation">@Display</span><span class="token punctuation">(</span><span class="token string">"TestGetProduct"</span><span class="token punctuation">)</span>
+    <span class="token keyword">void</span> <span class="token function">testGetProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">//given</span>
+      <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Product</span><span class="token punctuation">></span></span> products <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Products</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">new</span> <span class="token class-name">Product</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"Fruits"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Product</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"Vegetables"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token comment">//when</span>
+      <span class="token function">when</span><span class="token punctuation">(</span>mockProductRepository<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">thenReturn</span><span class="token punctuation">(</span>products<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Product</span><span class="token punctuation">></span></span> resultProducts <span class="token operator">=</span> mockProductRepository<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//then</span>
+      <span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>resultProducts<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"Check Count of Products"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">verify</span><span class="token punctuation">(</span>mockProductRepository<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="6-spying"></a><a href="#6-spying" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. Spying</h2>
+<ul>
+<li>Almost creates a class</li>
+<li>Also can override a class</li>
+<li>Only used for dependencies like @Mock. But not for SUT as @InjectMocks does</li>
+<li>Below is one famous usecase where we need to write to List. But the CustomObject change isn't rquired. So in those times, Spy is used</li>
+</ul>
+<pre><code class="hljs css language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">CustomObject</span><span class="token punctuation">></span></span> cusList<span class="token punctuation">;</span>
+<span class="token class-name">CustomObject</span> c1<span class="token punctuation">;</span>
+<span class="token class-name">CustomObject</span> c2<span class="token punctuation">;</span>
+cusList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>c1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+cusList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre><code class="hljs css language-java"><span class="token annotation punctuation">@Spy</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">CustomObject</span><span class="token punctuation">></span></span> spyList<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Mock</span>
+<span class="token class-name">CustomObject</span> c1<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Mock</span>
+<span class="token class-name">CustomObject</span> c2<span class="token punctuation">;</span>
+
+spyList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>c1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+spyList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre><code class="hljs css language-java"><span class="token annotation punctuation">@ExtendWith</span><span class="token punctuation">(</span><span class="token class-name">MockitoExtension</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">SubtractOperationSpyTest</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@InjectMocks</span>
+    <span class="token class-name">SubtractOperation</span> testClass
+    
+    <span class="token annotation punctuation">@Spy</span>
+    <span class="token class-name">CheckNumber</span> spyCheckNumber<span class="token punctuation">;</span>
+    
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token annotation punctuation">@Display</span><span class="token punctuation">(</span><span class="token string">"TestSubtractOperation"</span><span class="token punctuation">)</span>
+    <span class="token keyword">void</span> <span class="token function">testSubtractOperation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">//given</span>
+      <span class="token keyword">int</span> expected <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
+      <span class="token comment">//when</span>
+      <span class="token function">when</span><span class="token punctuation">(</span>spyCheckNumber<span class="token punctuation">.</span><span class="token function">checkValidity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">andReturn</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> actual <span class="token operator">=</span> testClass<span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//then</span>
+      <span class="token function">assertEquals</span><span class="token punctuation">(</span>expected<span class="token punctuation">,</span>actual<span class="token punctuation">,</span><span class="token string">"Subtract Operation Testing"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="miscellaneous-points"></a><a href="#miscellaneous-points" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Miscellaneous Points</h2>
+<ol>
+<li>@RunWith : Loads Spring Application Context and relevant beans. In JUnit5, all annotations have this by default. So not required.</li>
+<li>JUnit5 supports JUnit4 as vintage engine.</li>
+<li>Include all static imports to IDE Preference&gt;Editor&gt;Favourites</li>
+<li>Surefire Plugin : Currently for JUnit compatibility needs Surefire provider &amp; JUnit Jupiter Engine in plugin. By default checks *Test files. Change configuration if required for other name pattern check. Surefire reports are generated class basis.</li>
+<li>Jacoco Reports generated for the Unit tests in test phase for report goal</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="powermock-framework--its-need"></a><a href="#powermock-framework--its-need" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PowerMock Framework &amp; its Need</h2>
+<ul>
+<li>Mockito doesn’t allow mocking private, final &amp; static method.[Good OOPs design]</li>
+<li>But there is a need time &amp; again, so this framework can be used for such cases.</li>
+<li>Dependencies(Engine-powermock-api-mockito, API — powermock-module-junit4)
+Integration Testing with SpringBootTest Annotation</li>
+<li>Scans for SpringBootApplication annotation &amp; loads entire application context from there.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="integration-testing"></a><a href="#integration-testing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Integration Testing</h2>
+<h3><a class="anchor" aria-hidden="true" id="option-1--springboottest-annotation-with-resttemplate"></a><a href="#option-1--springboottest-annotation-with-resttemplate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option 1 : SpringBootTest Annotation with RestTemplate</h3>
+<ul>
+<li>Scans for SpringBootApplication annotation &amp; loads entire application context from there.</li>
+<li>This is from Spring Starter Test dependency usage</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="option-2--restassured-option"></a><a href="#option-2--restassured-option" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option 2 : RestAssured Option</h3>
+<ul>
+<li>Since RestAssured internally uses Groovy. It would be good to follow the same pattern</li>
+<li>RestAssured framework offers fluent BDD style interface than Spring Boot Test</li>
+</ul>
+<blockquote>
+<p><a href="https://stackoverflow.com/a/52052986/14179048">https://stackoverflow.com/a/52052986/14179048</a></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="my-sample-project-link"></a><a href="#my-sample-project-link" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>My Sample Project link</h2>
+<p><a href="https://github.com/anupama-sinha/spring-junit5-project">https://github.com/anupama-sinha/spring-junit5-project</a></p>
+<p>Will come up with a detailed separate post on Powermock Framework &amp; Integration Testing. Stay tuned in. :smiley: :pray:</p>
+<h2><a class="anchor" aria-hidden="true" id="references"></a><a href="#references" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>References</h2>
+<ul>
+<li><a href="https://medium.com/@piraveenaparalogarajah/what-is-mocking-in-testing-d4b0f2dbe20a">Types of Mocking Framwork</a></li>
+<li><a href="https://martinfowler.com/articles/mocksArentStubs.html">Famous Martin Fowler Material on Mocks &amp; Stubs</a></li>
+<li><a href="http://xunitpatterns.com/">xUnit Design Pattern of Testing</a></li>
+<li><a href="https://www.eclemma.org/jacoco/trunk/doc/maven.html">Jacoco-Java Code Coverage</a></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/build_tool/maven"><span class="arrow-prev">← </span><span>Maven Guide</span></a><a class="docs-next button" href="/ci_cd/docker-desktop"><span>Docker Desktop Installation</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#why-unit-testing">Why Unit Testing?</a></li><li><a href="#history">History</a></li><li><a href="#why-junit5">Why JUnit5?</a></li><li><a href="#junit5-architecture">JUnit5 Architecture</a></li><li><a href="#annotations-for-test-lifecycle-hooks">Annotations for Test Lifecycle Hooks</a></li><li><a href="#best-practices-for-unit-testing">Best Practices for Unit Testing</a></li><li><a href="#types-of-mocking-framework">Types of Mocking Framework</a></li><li><a href="#mockito-framework-annotations">Mockito Framework Annotations</a></li><li><a href="#junit-evolution-over-the-years-in-depth">JUnit Evolution over the Years in Depth</a></li><li><a href="#1-stubbing-classes">1. Stubbing Classes</a></li><li><a href="#2-mocking-classes">2. Mocking Classes</a></li><li><a href="#3-controller-testing-with-webmvctest-annotation">3. Controller Testing with WebMvcTest annotation</a></li><li><a href="#4-service-layer-testing">4. Service Layer Testing</a></li><li><a href="#5-respository-layer-testing-with-datajpatest-annotation">5. Respository Layer Testing with DataJpaTest Annotation</a></li><li><a href="#6-spying">6. Spying</a></li><li><a href="#miscellaneous-points">Miscellaneous Points</a></li><li><a href="#powermock-framework--its-need">PowerMock Framework &amp; its Need</a></li><li><a href="#integration-testing">Integration Testing</a><ul class="toc-headings"><li><a href="#option-1--springboottest-annotation-with-resttemplate">Option 1 : SpringBootTest Annotation with RestTemplate</a></li><li><a href="#option-2--restassured-option">Option 2 : RestAssured Option</a></li></ul></li><li><a href="#my-sample-project-link">My Sample Project link</a></li><li><a href="#references">References</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/final.ico" alt="Technical Interview Handbook" width="66" height="58"/></a><div><h5>Docs</h5><a href="/doc1.html">Getting Started (or other categories)</a><a href="/doc2.html">Guides (or other categories)</a><a href="/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/users">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 anupama-sinha</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
